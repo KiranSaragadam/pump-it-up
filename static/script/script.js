@@ -252,65 +252,73 @@ var ward = {
     "Urambo": ["Ichemba", "Igalala", "Igombe Mkulu", "Imalamakoye", "Itundu", "Kaliua", "Kanindo", "Kapilula", "Kashishi", "Kazaroho", "Kiloleni", "Milambo", "Muungano", "Mwongozo", "Songambele", "Ugunga", "Ukondamoyo", "Ukumbisiganga", "Urambo", "Ushokola", "Usinge", "Usisya", "Ussoke", "Uyowa", "Uyumbu", "Vumilia"],
     "Uyui": ["Bukumbi", "Goweko", "Ibiri", "Igalula", "Ikongolo", "Ilolangulu", "Isikizya", "Kizengi", "Loya", "Lutende", "Mabama", "Magiri", "Ndono", "Shitage", "Ufuluma", "Upuge", "Usagali"]
 }
-var extraction_type_group = {'afridev': ['afridev'],
-                            'cemo': ['other motorpump'],
-                            'climax': ['other motorpump'],
-                            'gravity': ['gravity'],
-                            'india mark ii': ['india mark ii'],
-                            'india mark iii': ['india mark iii'],
-                            'ksb': ['submersible'],
-                            'mono': ['mono'],
-                            'nira/tanira': ['nira/tanira'],
-                            'other': ['other'],
-                            'other - mkulima/shinyanga': ['other handpump'],
-                            'other - play pump': ['other handpump'],
-                            'other - rope pump': ['rope pump'],
-                            'other - swn 81': ['other handpump'],
-                            'submersible': ['submersible'],
-                            'swn 80': ['swn 80'],
-                            'walimi': ['other handpump'],
-                            'windmill': ['wind-powered']}
- var extraction_type = ['gravity', 'submersible', 'swn 80', 'nira/tanira', 'india mark ii',
-                        'other', 'ksb', 'mono', 'windmill', 'afridev', 'other - rope pump',
-                        'india mark iii', 'other - swn 81', 'other - play pump', 'cemo',
-                        'climax', 'walimi', 'other - mkulima/shinyanga']
+var extraction_type_group = {
+    'afridev': ['afridev'],
+    'cemo': ['other motorpump'],
+    'climax': ['other motorpump'],
+    'gravity': ['gravity'],
+    'india mark ii': ['india mark ii'],
+    'india mark iii': ['india mark iii'],
+    'ksb': ['submersible'],
+    'mono': ['mono'],
+    'nira/tanira': ['nira/tanira'],
+    'other': ['other'],
+    'other - mkulima/shinyanga': ['other handpump'],
+    'other - play pump': ['other handpump'],
+    'other - rope pump': ['rope pump'],
+    'other - swn 81': ['other handpump'],
+    'submersible': ['submersible'],
+    'swn 80': ['swn 80'],
+    'walimi': ['other handpump'],
+    'windmill': ['wind-powered']
+}
+var extraction_type = ['gravity', 'submersible', 'swn 80', 'nira/tanira', 'india mark ii',
+    'other', 'ksb', 'mono', 'windmill', 'afridev', 'other - rope pump',
+    'india mark iii', 'other - swn 81', 'other - play pump', 'cemo',
+    'climax', 'walimi', 'other - mkulima/shinyanga']
 var scheme_management = ['VWC', 'Other', 'nan', 'Private operator', 'WUG', 'Water Board', 'WUA', 'Water authority', 'Company', 'Parastatal', 'Trust', 'SWC', 'None']
-var management = {'commercial': ['company', 'private operator', 'trust', 'water authority'],
-                    'other': ['other', 'other - school'],
-                    'parastatal': ['parastatal'],
-                    'unknown': ['unknown'],
-                    'user-group': ['vwc', 'water board', 'wua', 'wug']}
+var management = {
+    'commercial': ['company', 'private operator', 'trust', 'water authority'],
+    'other': ['other', 'other - school'],
+    'parastatal': ['parastatal'],
+    'unknown': ['unknown'],
+    'user-group': ['vwc', 'water board', 'wua', 'wug']
+}
 var payment = ['pay annually', 'never pay', 'pay per bucket', 'unknown', 'pay when scheme fails', 'other', 'pay monthly']
-var payment_type = {'never pay': ['never pay'],
-                    'other': ['other'],
-                    'pay annually': ['annually'],
-                    'pay monthly': ['monthly'],
-                    'pay per bucket': ['per bucket'],
-                    'pay when scheme fails': ['on failure'],
-                    'unknown': ['unknown']}
-var ext_type_class = {'afridev': ['handpump'],
-                        'cemo': ['motorpump'],
-                        'climax': ['motorpump'],
-                        'gravity': ['gravity'],
-                        'india mark ii': ['handpump'],
-                        'india mark iii': ['handpump'],
-                        'ksb': ['submersible'],
-                        'mono': ['motorpump'],
-                        'nira/tanira': ['handpump'],
-                        'other': ['other'],
-                        'other - mkulima/shinyanga': ['handpump'],
-                        'other - play pump': ['handpump'],
-                        'other - rope pump': ['rope pump'],
-                        'other - swn 81': ['handpump'],
-                        'submersible': ['submersible'],
-                        'swn 80': ['handpump'],
-                        'walimi': ['handpump'],
-                        'windmill': ['wind-powered']}
+var payment_type = {
+    'never pay': ['never pay'],
+    'other': ['other'],
+    'pay annually': ['annually'],
+    'pay monthly': ['monthly'],
+    'pay per bucket': ['per bucket'],
+    'pay when scheme fails': ['on failure'],
+    'unknown': ['unknown']
+}
+var ext_type_class = {
+    'afridev': ['handpump'],
+    'cemo': ['motorpump'],
+    'climax': ['motorpump'],
+    'gravity': ['gravity'],
+    'india mark ii': ['handpump'],
+    'india mark iii': ['handpump'],
+    'ksb': ['submersible'],
+    'mono': ['motorpump'],
+    'nira/tanira': ['handpump'],
+    'other': ['other'],
+    'other - mkulima/shinyanga': ['handpump'],
+    'other - play pump': ['handpump'],
+    'other - rope pump': ['rope pump'],
+    'other - swn 81': ['handpump'],
+    'submersible': ['submersible'],
+    'swn 80': ['handpump'],
+    'walimi': ['handpump'],
+    'windmill': ['wind-powered']
+}
 initDropdownList('basin', 0, basin);
 initDropdownList('region', 0, region);
 initDropdownList('scheme_management', 0, scheme_management);
-initDropdownList('public_meeting', 0, [true,false]);
-initDropdownList('permit', 0, [true,false]);
+initDropdownList('public_meeting', 0, [true, false]);
+initDropdownList('permit', 0, [true, false]);
 initDropdownList('extraction_type', 0, extraction_type);
 initDropdownList1('district_code', 0, district_code);
 initDropdownList1('lga', 0, lga);
@@ -342,12 +350,14 @@ function payment_fun() {
     initDropdownList6('payment_type', 0, payment_type);
 }
 var quality_group = ['good', 'salty', 'milky', 'unknown', 'fluoride', 'colored']
-var water_quality = {'colored': ['coloured'],
-                'fluoride': ['fluoride', 'fluoride abandoned'],
-                'good': ['soft'],
-                'milky': ['milky'],
-                'salty': ['salty', 'salty abandoned'],
-                'unknown': ['unknown']}
+var water_quality = {
+    'colored': ['coloured'],
+    'fluoride': ['fluoride', 'fluoride abandoned'],
+    'good': ['soft'],
+    'milky': ['milky'],
+    'salty': ['salty', 'salty abandoned'],
+    'unknown': ['unknown']
+}
 function initDropdownList7(id, min, list) {
     var select, i, option;
     var s = document.forms[0].quality_group.value;
@@ -370,7 +380,7 @@ var source_class = ['groundwater', 'surface', 'unknown']
 initDropdownList('source_class', 0, source_class);
 function initDropdownList8(id, min, list, feature) {
     var select, i, option;
-    var s = document.getElementById( feature ).value;
+    var s = document.getElementById(feature).value;
     select = document.getElementById(id);
     select.innerHTML = ""
     for (i = min; i <= list[s].length - 1; i += 1) {
@@ -380,38 +390,42 @@ function initDropdownList8(id, min, list, feature) {
     }
 }
 var source = ['spring', 'rainwater harvesting', 'dam', 'machine dbh', 'other', 'shallow well', 'river', 'hand dtw', 'lake', 'unknown']
-var source_class = {'dam': ['surface'],
-                    'hand dtw': ['groundwater'],
-                    'lake': ['surface'],
-                    'machine dbh': ['groundwater'],
-                    'other': ['unknown'],
-                    'rainwater harvesting': ['surface'],
-                    'river': ['surface'],
-                    'shallow well': ['groundwater'],
-                    'spring': ['groundwater'],
-                    'unknown': ['unknown']}
-var source_type= {'dam': ['dam'],
-                    'hand dtw': ['borehole'],
-                    'lake': ['river/lake'],
-                    'machine dbh': ['borehole'],
-                    'other': ['other'],
-                    'rainwater harvesting': ['rainwater harvesting'],
-                    'river': ['river/lake'],
-                    'shallow well': ['shallow well'],
-                    'spring': ['spring'],
-                    'unknown': ['other']}
-initDropdownList('source',0,source);
-initDropdownList8('source_type',0,source_type,'source')
-initDropdownList8('source_class',0,source_class,'source');
+var source_class = {
+    'dam': ['surface'],
+    'hand dtw': ['groundwater'],
+    'lake': ['surface'],
+    'machine dbh': ['groundwater'],
+    'other': ['unknown'],
+    'rainwater harvesting': ['surface'],
+    'river': ['surface'],
+    'shallow well': ['groundwater'],
+    'spring': ['groundwater'],
+    'unknown': ['unknown']
+}
+var source_type = {
+    'dam': ['dam'],
+    'hand dtw': ['borehole'],
+    'lake': ['river/lake'],
+    'machine dbh': ['borehole'],
+    'other': ['other'],
+    'rainwater harvesting': ['rainwater harvesting'],
+    'river': ['river/lake'],
+    'shallow well': ['shallow well'],
+    'spring': ['spring'],
+    'unknown': ['other']
+}
+initDropdownList('source', 0, source);
+initDropdownList8('source_type', 0, source_type, 'source')
+initDropdownList8('source_class', 0, source_class, 'source');
 function source_fun() {
-    initDropdownList8('source_type',0,source_type,'source')
-    initDropdownList8('source_class',0,source_class,'source');
+    initDropdownList8('source_type', 0, source_type, 'source')
+    initDropdownList8('source_class', 0, source_class, 'source');
 }
 
 initDropdownList('waterpoint_type_group', 0, ['communal standpipe', 'hand pump', 'other', 'improved spring', 'cattle trough', 'dam']);
-var waterpoint_type = {'cattle trough': ['cattle trough'],'communal standpipe': ['communal standpipe', 'communal standpipe multiple'],'dam': ['dam'],'hand pump': ['hand pump'],'improved spring': ['improved spring'],'other': ['other']};
-initDropdownList8('waterpoint_type',0,waterpoint_type, 'waterpoint_type_group');
+var waterpoint_type = { 'cattle trough': ['cattle trough'], 'communal standpipe': ['communal standpipe', 'communal standpipe multiple'], 'dam': ['dam'], 'hand pump': ['hand pump'], 'improved spring': ['improved spring'], 'other': ['other'] };
+initDropdownList8('waterpoint_type', 0, waterpoint_type, 'waterpoint_type_group');
 
 function waterpoint_type_fun() {
-    initDropdownList8('waterpoint_type',0,waterpoint_type, 'waterpoint_type_group');
+    initDropdownList8('waterpoint_type', 0, waterpoint_type, 'waterpoint_type_group');
 }
