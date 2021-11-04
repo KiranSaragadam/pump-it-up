@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script>L_PREFER_CANVAS=false; L_NO_TOUCH=false; L_DISABLE_3D=false;</script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.4.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+    <meta name="viewport" content="width=device-width,
+        initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <style>#map_099a3fa751d44262b004a99bacb740b9 {
+        position: relative;
+        width: 100.0%;
+        height: 100.0%;
+        left: 0.0%;
+        top: 0.0%;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}"> 
+   <!-- <link rel="stylesheet" href="../static/styles/styles.css"> -->
+    <title>Pump it Up: Data Mining the Water Table</title>
+</head>
+
+<body>
+    <div id="title"><h1 class="title">Pump it Up: Data Mining the Water Table</h1></div>
+    <div id="form">
+        <form action="/" method="POST">
+            <div class='line'>
+                <label for="id">id of the Pump</label>
+                <input name="id" type="text" placeholder="1234" required><br>
+            </div>
+            <div class='line'>
+                <label for="amount_tsh">amount_tsh</label>
+                <input name="amount_tsh" type="number" value="0.0" step="0.1" placeholder="1234" required><br>
+            </div>
+            <div class='line'>
+                <label for="date">date of filling</label>
+                <input name="date" type="date" min="2000-01-01" required><br>
+            </div>
+            <div class='line'>
+                <label for="funder">funder</label>
+                <input name="funder" type="text" placeholder="government" required><br>
+            </div>
+            <div class='line'>
+                <label for="gps_height">gps_height</label>
+                <input name="gps_height" type="number" step="1" placeholder="1234" required><br>
+            </div>
+            <div class='line'>
+                <label for="installer">installer</label>
+                <input name="installer" type="text" placeholder="government of tanzia" required><br>
+            </div>
+            <div class='line'>
+                <label for="longitude">longitude</label>
+                <input name="longitude" type="number" step="0.00000001" min="29" value="35" max="41" placeholder="1234" required><br>
+            </div>
+            <div class='line'>
+                <label for="latitude">latitude</label>
+                <input name="latitude" type="number" step="0.00000001" value="-6.5" max="-1" min="-12" placeholder="1234" required><br>
+            </div>
+            <div class='line'>
+                <label for="wpt_name">wpt_name</label>
+                <input name="wpt_name" type="text" placeholder="public pump" required><br>
+            </div>
+            <div class='line'>
+                <label for="num_private">num_private</label>
+                <input name="num_private" type="number" min="0" value="0" placeholder="1-6" required><br>
+            </div>
+            <div class='line'>
+                <label for="basin">basin</label>
+                <select id="basin" name="basin" required ></select><br>
+            </div>
+            <div class='line'>
+                <label for="subvillage">subvillage</label>
+                <input id="subvillage" name="subvillage" type="text" placeholder="mana" required><br>
+            </div>
+            <div class='line'>
+                <label for="region">region</label>
+                <select id="region" onchange="region_code_fun()" name='region' required></select><br>
+            </div>
+            <div class='line'>
+                <label for="region_code">region_code</label>
+                <select id="region_code" name="region_code" required></select><br>
+            </div>
+            <div class='line'>
+                <label for="district_code">district_code</label>
+                <select id="district_code" name="district_code" required></select><br>
+            </div>
+            <div class='line'>
+                <label for="lga">lga</label>
+                <select id="lga" name="lga" onchange="lga_fun()" required></select><br>
+            </div>
+            <div class='line'>
+                <label for="ward">ward</label>
+                <select id="ward" name="ward" required></select><br>
+            </div>
+            <div class='line'>
+                <label for="population">population</label>
+                <input name="population" type="number" min="0" placeholder="1234"required><br>
+            </div>
+            <div class='line'>
+                <label for="public_meeting">public_meeting</label>
+                <select id="public_meeting" name="public_meeting" required></select><br>
+            </div>
+            <div class='line'>
+                <label for="recorded_by">recorded_by</label>
+                <input id="recorded_by" name="recorded_by" readonly value='GeoData Consultants Ltd'><br>
+            </div>
+            <div class='line'>
+                <label for="scheme_management">scheme_management</label>
+                <select id="scheme_management" name="scheme_management" required></select><br>
+            </div>
+            <div class='line'>
+                <label for="scheme_name">scheme_name</label>
+                <input id="scheme_name" name="scheme_name" type="text" value="" required><br>
+            </div>
+            <div class='line'>
+                <label for="permit">permit</label>
+                <select id="permit" name="permit" required></select><br>
+            </div>
+            <div class='line'>
+                <label for="construction_year">construction_year</label>
+                <input id="construction_year" name="construction_year" required type="number" min="1850" max="2100"><br>
+            </div>
+            <div class='line'>
+                <label for="extraction_type">extraction_type</label>
+                <select id="extraction_type" name="extraction_type" onchange="ext_type_fun()" required></select><br>
+            </div>
+            <div class='line'>
+                <label for="extraction_type_group">extraction_type_group</label>
+                <select id="extraction_type_group" name="extraction_type_group" required></select><br>
+            </div>
+            <div class='line'>
+                <label for="extraction_type_class">extraction_type_class</label>
+                <select id="extraction_type_class" name="extraction_type_class" required></select><br>
+            </div>
+            <div class='line'>
+                <label for="management_group">management_group</label>
+                <select id="management_group" name="management_group" onchange="management_fun()" required></select><br>
+            </div>
+            <div class='line'>
+                <label for="management">management</label>
+                <select id="management" name="management"required></select><br>
+            </div>
+            <div class='line'>
+                <label for="payment">payment</label>
+                <select id="payment" name="payment" onchange="payment_fun()" required></select><br>
+            </div>
+            <div class='line'>
+                <label for="payment_type">payment_type</label>
+                <select id="payment_type" name="payment_type" required readonly></select><br>
+            </div>
+            <div class='line'>
+                <label for="quality_group">quality_group</label>
+                <select id="quality_group" name="quality_group" onchange="quality_group_fun()" required></select><br>
+            </div>
+            <div class='line'>
+                <label for="water_quality">water_quality</label>
+                <select id="water_quality" name="water_quality" required></select><br>
+            </div>
+            <div class='line'>
+                <label for="quantity_group">quantity_group</label>
+                <select id="quantity_group" name="quantity_group" required></select><br>
+            </div>
+            <div class='line'>
+                <label for="source">source</label>
+                <select id="source" name="source" onchange='source_fun()' required></select><br>
+            </div>
+            <div class='line'>
+                <label for="source_type">source_type</label>
+                <select id="source_type" name="source_type" required></select><br>
+            </div>
+            <div class='line'>
+                <label for="source_class">source_class</label>
+                <select id="source_class" name="source_class" required></select><br>
+            </div>
+            <div class='line'>
+                <label for="waterpoint_type_group">waterpoint_type_group</label>
+                <select id="waterpoint_type_group" name="waterpoint_type_group" onchange='waterpoint_type_fun()' required></select><br>
+            </div>
+            <div class='line'>
+                <label for="waterpoint_type">waterpoint_type</label>
+                <select id="waterpoint_type" name="waterpoint_type" required></select><br>
+            </div>
+            <div class='line'>
+                <input type="submit" name="submit"></div>
+                <h1 id="predict"> prediction : {{ prediction }}</h1>
+        </form>
+        <button onclick="myFunction()">Refresh/show map</button>
+        <button onclick="myFunction2()">clear map</button>
+        <div id="map_folium"><div class="folium-map" id="map_099a3fa751d44262b004a99bacb740b9" ></div></div>
+        <script src="{{ url_for('static', filename='script/script2.js') }}"></script>
+        <script src="{{ url_for('static', filename='script/script.js') }}"></script> 
+         
+         <!-- <script src="../static/script/script.js"></script> -->
+         <!-- <script src="../static/script/script2.js"></script> -->
+    </div>
+
+</body>
+
+</html>
