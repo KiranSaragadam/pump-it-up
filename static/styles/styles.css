@@ -45,25 +45,40 @@ form{
     width: 68.5%;
     height: 83%;
 }
+.buttons{
+    position: fixed;
+    top: 9%;
+    left: 31%;
+    width: 226px;
+}
+.hide-map{
+    margin-left: 5%;
+}
 @media (max-width: 850px) {
     .line {
-      flex-direction: column;
-    }
-    input, select{
-        width: 150px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width:100%;
     }
     #predict{
-        position: fixed;
-        top: 10%;
-        right: 0px;
+        position: static;
         font-size: 18px;
     }
     .title{
-        text-align: right;
+        text-align: center;
         font-size: 25px;
+        background-color: green;
+        margin: 0;
     }
     form{
         padding-top: 8%;
         font-size: small;
+    }
+    .buttons{
+        display: none;
+    }
+    #map_099a3fa751d44262b004a99bacb740b9{
+        display: none;
     }
   }
