@@ -30,7 +30,7 @@ def predict():
     prediction = model.predict(x)
 
     
-    return render_template("home.html", prediction = classes[prediction[0]])
+    return render_template("home.html", prediction = classes[prediction[0]], longitude = input['longitude'], latitude = input['latitude'])
 
 
 if __name__ == "__main__":
