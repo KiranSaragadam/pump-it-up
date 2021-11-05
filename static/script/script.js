@@ -429,3 +429,12 @@ initDropdownList8('waterpoint_type', 0, waterpoint_type, 'waterpoint_type_group'
 function waterpoint_type_fun() {
     initDropdownList8('waterpoint_type', 0, waterpoint_type, 'waterpoint_type_group');
 }
+function myFunction(){
+    
+}
+if (window.innerWidth >= 850){
+  var scriptSrc = "../static/script/script2.js";
+var script = document.createElement('script');
+script.src = scriptSrc;
+var head = document.getElementsByTagName('head')[0];
+head.appendChild(script);}
